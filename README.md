@@ -5,18 +5,7 @@ The concept of our project is to create a mixer that music producers often use. 
 
 ### Analysis
 
-- Will you use data abstraction? How?
-- Will you use recursion? How?
-- Will you use map/filter/reduce? How? 
-- Will you use object-orientation? How?
-- Will you use functional approaches to processing your data? How?
-- Will you use state-modification approaches? How? (If so, this should be encapsulated within objects. `set!` pretty much should only exist inside an object.)
-- Will you build an expression evaluator, like we did in the symbolic differentatior and the metacircular evaluator?
-- Will you use lazy evaluation approaches?
-
-The idea here is to identify what ideas from the class you will use in carrying out your project. 
-
-**Your project will be graded, in part, by the extent to which you adopt approaches from the course into your implementation, _and_ your discussion about this.**
+So, far we planning to implement a recursion function that will keep track of how many time the user keystroke went while the application was running. Beside the recursion function, we don’t know yet what else, we are going to be adding to this application. We can implemented are whole program without using some of the thing we had learned in class. All the three libraries we will be using have their own functions. However, we believe in code optimization and the only way, we can carry out some of stuff from the course.
 
 ### External Technologies
 At this point, we are not sure if we will use external technologies. 
