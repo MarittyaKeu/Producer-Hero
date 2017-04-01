@@ -1,13 +1,9 @@
 # Producer Hero
 
 ### Statement
-The concept of our project is to create a mixer that music producers often use. We will be using the RSound, 2dhtp/Universe, and 2dht/image libraries to use in our project. For this project, we are hoping to make an application that uses the keyboard to generate an RSound and the end user can channel their inner producer and create a beat. The application will also allow the user to record the beat they've generated and play it back. 
+The concept of our project is to create a mixer that music producers often use. We will be using the RSound, 2htdp/Universe, and 2htdp/image libraries to use in our project. For this project, we are hoping to make an application that uses the keyboard to generate an RSound and the end user can channel their inner producer to create a beat. The application will also allow the user to record the beat they've generated and play it back. 
 
 ### Analysis
-
-Explain what approaches from class you will bring to bear on the project.
-
-Be explicit about the techiques from the class that you will use. For example:
 
 - Will you use data abstraction? How?
 - Will you use recursion? How?
@@ -27,7 +23,7 @@ At this point, we are not sure if we will use external technologies.
 
 ### Data Sets or other Source Materials
 
-RSound uses and manipulate wav files so we downloaded some sample sounds and an 808 drum kit so play around with.
+RSound uses and manipulate wav files so we downloaded some sample sounds and an 808 drum kit to play around with.
 
 Some wav files we've played around with so far are from the following websites listed below......
 
@@ -55,7 +51,7 @@ At the start of our application, we create a starting window using the 2htdp/uni
 This is our tentative schedule......
 
 ### First Milestone (Sun Apr 9)
-FOr our first milestone, we will draw our three window frames(sceens) and get it up and running properly.
+For our first milestone, we will draw our three window frames(sceens) and get it up and running properly.
 
 ### Second Milestone (Sun Apr 16)
 For our second milestone, we intend to get RSound working properly and also get the keyboard strokes to generate a sound.
@@ -65,7 +61,10 @@ If we have time, we will try to make a game similar to Guitar Hero
 
 ## Group Responsibilities
 
-### Marittya Keu @MarittyaKeu
+
+### Marittya "Mike" Keu  @MarittyaKeu
+
+
 I will be using RSound to incorporate into our project. I will create a bunch of RSound objects which we will then use and maniuplate to play sounds using keyboard.
 
 ### Emmanuel Rosario @emmanrosa
