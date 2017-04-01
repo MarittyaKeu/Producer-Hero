@@ -23,32 +23,24 @@ The idea here is to identify what ideas from the class you will use in carrying 
 **Your project will be graded, in part, by the extent to which you adopt approaches from the course into your implementation, _and_ your discussion about this.**
 
 ### External Technologies
-You are encouraged to develop a project that connects to external systems. For example, this includes systems that:
-
-- retrieve information or publish data to the web
-- generate or process sound
-- control robots or other physical systems
-- interact with databases
-
-If your project will do anything in this category (not only the things listed above!), include this section and discuss.
+At this point, we are not sure if we will use external technologies. If time permits, we will try to incorporate some sort of database where we can store the beat produced into a database.
 
 ### Data Sets or other Source Materials
-We downloaded a sample 808 drum kit wav file from these two websites
+
+RSound uses and manipulate wav files so we downloaded some sample sounds and an 808 drum kit so play around with.
+
+Some wav files we've played around with so far are from the following websites listed below......
+
 http://www.brainybetty.com/soundsforpowerpoint2.htm
 
 http://hiphopmakers.com/free-808-drum-kit-227-samples
 
 
-
-If you will be working with existing data, where will you get those data from? (Dowload from a website? Access in a database? Create in a simulation you will build? ...)
-
-How will you convert your data into a form usable for your project?  
-
-If you are pulling data from somewhere, actually go download it and look at it before writing the proposal. Explain in some detail what your plan is for accomplishing the necessary processing.
-
-If you are using some other starting materials, explain what they are. Basically: anything you plan to use that isn't code.
-
 ### Deliverable and Demonstration
+
+For our end result, we expect to have a full interactive mixer application. The application will come with instructions with what sound a certain letter on the keyboard will generate. The user should be able to use the keyboards to produce some sort of beats and have it recorded and played back. 
+
+
 Explain exactly what you'll have at the end. What will it be able to do at the live demo?
 
 What exactly will you produce at the end of the project? A piece of software, yes, but what will it do? Here are some questions to think about (and answer depending on your application).
@@ -62,7 +54,7 @@ How will you know if you are successful?
 If you include some kind of _quantitative analysis,_ that would be good.
 
 ## Architecture Diagram
-![test image](/architecture-diagram.png?raw=true "test image")
+Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
 
 Create several paragraphs of narrative to explain the pieces and how they interoperate.
 
@@ -84,11 +76,26 @@ Which portion of the work will be completed (and committed to Github) by this da
 Which portion of the work will be completed (and committed to Github) by this day?  
 
 ### Public Presentation (Mon Apr 24, Wed Apr 26, or Fri Apr 28 [your date to be determined later])
-If time permits, we will create a game the looks just like Guitar Hero
+What additionally will be completed before the public presentation?
 
 ## Group Responsibilities
+Here each group member gets a section where they, as an individual, detail what they are responsible for in this project. Each group member writes their own Responsibility section. Include the milestones and final deliverable.
 
-### Marittya "Mike" Keu @MarittyaKeu
+Please use Github properly: each individual must make the edits to this file representing their own section of work.
 
-### Emmanuel Rosario @emmanrosa
-I’m going to use 2hdtp/universe to create scenes and all the user inputs can be handle inside of them. Also, inside those scenes I’m going to place the images using 2hdtp/image.  
+**Additional instructions for teams of three:** 
+* Remember that you must have prior written permission to work in groups of three (specifically, an approved `FP3` team declaration submission).
+* The team must nominate a lead. This person is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
+* The team lead has full partner implementation responsibilities also.
+* Identify who is team lead.
+
+In the headings below, replace the silly names and GitHub handles with your actual ones.
+
+### Susan Scheme @susanscheme
+will write the....
+
+### Leonard Lambda @lennylambda
+will work on...
+
+### Frank Funktions @frankiefunk 
+Frank is team lead. Additionally, Frank will work on...   
