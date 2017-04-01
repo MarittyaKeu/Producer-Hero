@@ -23,7 +23,7 @@ The idea here is to identify what ideas from the class you will use in carrying 
 **Your project will be graded, in part, by the extent to which you adopt approaches from the course into your implementation, _and_ your discussion about this.**
 
 ### External Technologies
-At this point, we are not sure if we will use external technologies. If time permits, we will try to incorporate some sort of database where we can store the beat produced into a database.
+At this point, we are not sure if we will use external technologies. 
 
 ### Data Sets or other Source Materials
 
@@ -41,61 +41,32 @@ http://hiphopmakers.com/free-808-drum-kit-227-samples
 For our end result, we expect to have a full interactive mixer application. The application will come with instructions with what sound a certain letter on the keyboard will generate. The user should be able to use the keyboards to produce some sort of beats and have it recorded and played back. 
 
 
-Explain exactly what you'll have at the end. What will it be able to do at the live demo?
-
-What exactly will you produce at the end of the project? A piece of software, yes, but what will it do? Here are some questions to think about (and answer depending on your application).
-
-Will it run on some data, like batch mode? Will you present some analytical results of the processing? How can it be re-run on different source data?
-
-Will it be interactive? Can you show it working? This project involves a live demo, so interactivity is good.
-
 ### Evaluation of Results
 How will you know if you are successful? 
 If you include some kind of _quantitative analysis,_ that would be good.
 
 ## Architecture Diagram
-Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
 
-Create several paragraphs of narrative to explain the pieces and how they interoperate.
++![test image](/architecture-diagram.png?raw=true "test image")
+
+At the start of our application, we create a starting window using the 2htdp/universe library which is going to playing background introduction music. From there we are able to navigate to either a new help screen or the main program's screen. If you are at the help screen, you will be shown some tips on how to use our application, and also a keystroke that will bring you to the main program's screen. At the main program's screen, the magic happens. This is where you are able to start mixing sounds together to generate a nice beat and also record it into(hopefully) a file stored on computer. 
 
 ## Schedule
-Explain how you will go from proposal to finished product. 
-
-There are three deliverable milestones to explicitly define, below.
-
-The nature of deliverables depend on your project, but may include things like processed data ready for import, core algorithms implemented, interface design prototyped, etc. 
-
-You will be expected to turn in code, documentation, and data (as appropriate) at each of these stages.
-
-Write concrete steps for your schedule to move from concept to working system. 
+This is our tentative schedule......
 
 ### First Milestone (Sun Apr 9)
-Which portion of the work will be completed (and committed to Github) by this day? 
+FOr our first milestone, we will draw our three window frames(sceens) and get it up and running properly.
 
 ### Second Milestone (Sun Apr 16)
-Which portion of the work will be completed (and committed to Github) by this day?  
+For our second milestone, we intend to get RSound working properly and also get the keyboard strokes to generate a sound.
 
 ### Public Presentation (Mon Apr 24, Wed Apr 26, or Fri Apr 28 [your date to be determined later])
-What additionally will be completed before the public presentation?
+If we have time, we will try to make a game similar to Guitar Hero
 
 ## Group Responsibilities
-Here each group member gets a section where they, as an individual, detail what they are responsible for in this project. Each group member writes their own Responsibility section. Include the milestones and final deliverable.
 
-Please use Github properly: each individual must make the edits to this file representing their own section of work.
+### Marittya Keu @MarittyaKeu
+I will be using RSound to incorporate into our project. I will create a bunch of RSound objects which we will then use and maniuplate to play sounds using keyboard.
 
-**Additional instructions for teams of three:** 
-* Remember that you must have prior written permission to work in groups of three (specifically, an approved `FP3` team declaration submission).
-* The team must nominate a lead. This person is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
-* The team lead has full partner implementation responsibilities also.
-* Identify who is team lead.
-
-In the headings below, replace the silly names and GitHub handles with your actual ones.
-
-### Susan Scheme @susanscheme
-will write the....
-
-### Leonard Lambda @lennylambda
-will work on...
-
-### Frank Funktions @frankiefunk 
-Frank is team lead. Additionally, Frank will work on...   
+### Emmanuel Rosario @emmanrosa
+I’m going to use 2hdtp/universe to create scenes and all the user inputs can be handle inside of them. Also, inside those scenes I’m going to place the images using 2hdtp/image.  
