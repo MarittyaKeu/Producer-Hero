@@ -5,16 +5,14 @@ The concept of our project is to create a mixer that music producers often use. 
 
 ### Analysis
 
-So, far we planning to implement a recursion function that will keep track of how many time the user keystroke went while the application was running. Beside the recursion function, we don’t know yet what else, we are going to be adding to this application. We can implemented are whole program without using some of the thing we had learned in class. All the three libraries we will be using have their own functions. However, we believe in code optimization and the only way, we can carry out some of stuff from the course.
+So far we are planning to implement a recursive function that will keep track of how many times the user presses a key while the application is running. Beside the recursion function, we don’t know yet what else, we are going to be adding to this application. We can implement our whole program without using some of the things we had learned in class. All of the three libraries we will be using have their own functions. However, we believe in code optimization and the only way we can carry out some of stuff from the course.
 
 ### External Technologies
 At this point, we are not sure if we will use external technologies. 
 
 ### Data Sets or other Source Materials
 
-RSound uses and manipulate wav files so we downloaded some sample sounds and an 808 drum kit to play around with.
-
-Some wav files we've played around with so far are from the following websites listed below......
+RSound uses and manipulate wav files so we downloaded some sample sounds and an 808 drum kit to play around with. Some wav files we've played around with so far are from the following websites listed below......
 
 http://www.brainybetty.com/soundsforpowerpoint2.htm
 
@@ -27,8 +25,8 @@ For our end result, we expect to have a full interactive mixer application. The 
 
 
 ### Evaluation of Results
-How will you know if you are successful? 
-If you include some kind of _quantitative analysis,_ that would be good.
+Success of this project will mean that we have a fully functional software that displays the user interface correctly with and the the keystrokes responds to a generated RSound. Also, we are going to keep count of how many times a key is pressed, therefore we hope to have the correct count displayed somewhere on the screen.
+
 
 ## Architecture Diagram
 
