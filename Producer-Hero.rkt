@@ -9,8 +9,8 @@
                              #f 'modern 'italic 'bold #f))
 (define game-text (text/font "Press [Space] to start!." 35 "red"
                              #f 'modern 'italic 'bold #f))
-;;(define key-p " ")
-;;(define key-m "p")
+;;(define key-s " ")
+(define key-p "p")
   
 ; handle input
 (define (handle-key n key)
@@ -20,7 +20,7 @@
     [(key=? key "up") (stop)]
     ; open game window2
     [(key-event? " ") (game 'true)]
-    [(key-event? "p") (play a)]
+    [(key-event? key-p) (play a)]
     [else n]
     )
 )
