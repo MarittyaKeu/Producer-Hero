@@ -1,7 +1,7 @@
 #lang racket
 (require 2htdp/universe 2htdp/image rsound)
 
-; reads the musics
+; reads the wav file
 (define a (rs-read "/home/emmanuel/Desktop/Final-P/FP/sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
 ; text
@@ -9,18 +9,18 @@
                              #f 'modern 'italic 'bold #f))
 (define game-text (text/font "Press [Space] to start!." 35 "red"
                              #f 'modern 'italic 'bold #f))
-(define key-p " ")
-(define key-m "p")
+;;(define key-p " ")
+;;(define key-m "p")
   
 ; handle input
 (define (handle-key n key)
   (cond
     ; open intro window
-    [(key=? key "s") (intro 'true)]
+    [(key=? key "h") (intro 'true)]
     [(key=? key "up") (stop)]
     ; open game window2
-    [(key-event? key-p) (game 'true)]
-    [(key-event? key-m) (play a)]
+    [(key-event? " ") (game 'true)]
+    [(key-event? "p") (play a)]
     [else n]
     )
 )
@@ -54,17 +54,14 @@
       (error "error")))
 
 ; window1
-
 ; scene drawing
 (define (render y)
   (pstream-play as a)
-  (underlay (overlay(beside
-                (bitmap "pics/up.png")
-                (bitmap "pics/left.png")
-                (bitmap "pics/right.png")
-                (bitmap "pics/down.png"))
-                (bitmap "pics/music-back.jpg"))  stop-text))
-
+   (underlay  (bitmap "pics/studio.png")  (above
+                                     (text/font "Producer Hero" 60 "yellow"
+                                                #f 'modern 'italic 'bold #f)
+                                     (text/font "Press [Space] to start or Press [h] to help." 35 "yellow"
+                                                #f 'modern 'italic 'bold #f))))
 
 ; scene initialization
 (big-bang 0
