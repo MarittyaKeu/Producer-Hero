@@ -9,7 +9,7 @@
 
 
 ;play a continuous sound
-(define (play-forever sound)
+(define (play-nonstop sound)
   (define p (make-pstream)) ;creates a pstream
   (define len (rs-frames sound))
   (let loop ([t 0])
