@@ -1,13 +1,11 @@
 #lang racket
 (require 2htdp/universe 2htdp/image rsound)
 
-
 ; reads the musics
 (define a (rs-read "/home/emmanuel/Desktop/Final-P/FP/sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
 
-;;start
-
+;for next week, april 10
 ;;defines
 (define key-a "a")
 (define key-s "s")
@@ -18,38 +16,37 @@
 (define key-p "p")
 (define key-sp " ")
 
-
 ;;new key-st
 (define (key-st n key)
   (cond
     [(key-event? key-a) (play a)]
     [(key-event? key-s) (stop)]
-    [(key-event? key-d) (play a)]
-    [(key-event? key-q) (play a)]
-    [(key-event? key-w) (play a)]
-    [(key-event? key-e) (play a)]
     [else n]
     )
 )
-;;end
-;;
+
+; set the last scene background
 (define background1 (rectangle 1000 600 "solid" "black")) 
-(define star1 (star-polygon 40 7 3 "outline" "darkred"))
-(define ellipse1 (overlay (ellipse 20 20 "solid" "red")
-           (ellipse 40 40 "solid" "black")
-           (ellipse 60 60 "solid" "red")
-           (ellipse 80 80 "solid" "black")
-           (ellipse 100 100 "solid" "red")
-           (ellipse 140 140 "solid" "black")
-           (ellipse 180 180 "solid" "black")
-           (ellipse 200 200 "solid" "red")
-           (ellipse 240 240 "solid" "black")))
-;;set game window
-;;scene drawing
+
+; 2.2.4 Recursive Image Functions
+; This code can be found at "https://docs.racket-lang.org/teachpack/2htdpimage-guide.html"
+; this is a Recursive Image Functions
+(define (swoosh image s)
+        (cond
+          [(zero? s) image]
+          [else (swoosh
+                 (overlay/align "center" "top"
+                                (circle (* s 1/2) "solid" "red")
+                                (rotate 4 image))
+                 (- s 1))]))
+
+
+; set sounds scene
 (define (render2 y)
   (stop)
-(underlay background1 ;;add
-            ellipse1)) ;;add
+(underlay background1 
+             (swoosh (circle 300 "solid" "black")
+              90))) ;;add
 (define (game n)
   (if (eqv? n 'true)
       ; scene initialization
@@ -58,12 +55,8 @@
                 (to-draw render2))
       (error "error")))
 
-;;scene intro
-
 ; text
-(define help (text/font "Press [s] to help or [Space] to start!." 35 "red"
-                             #f 'modern 'italic 'bold #f))
-(define game-text (text/font "Press [Space] to start!." 35 "red"
+(define game-text (text/font "Press [Space] to start!" 35 "white"
                              #f 'modern 'italic 'bold #f))
 ; handle input
 (define (handle-key n key)
@@ -78,25 +71,10 @@
     )
 )
 
-;;set game window
-; scene drawing
-(define (render2 y)
-  (stop)
-  (underlay (bitmap "pics/music-back2.jpg")  game-text))
-
-(define (game n)
-  (if (eqv? n 'true)
-      ; scene initialization
-      (big-bang 0
-                (on-key handle-key)
-                (to-draw render2))
-      (error "error")))
-
-;;set intro window
-; scene drawing
+; set intro window
 (define (render1 y)
   (stop)
-  (underlay (bitmap "pics/music-back1.jpg")  game-text))
+  (underlay/xy (bitmap "pics/helpmenu.png") 20 100 game-text))
 
 (define (intro n)
   (if (eqv? n 'true)
@@ -106,16 +84,14 @@
                 (to-draw render1))
       (error "error")))
 
-; window1
-; scene drawing
+; set main scene
 (define (render y)
   (pstream-play as a)
-   (underlay  (bitmap "pics/studio.png")  (above
+  (underlay  (bitmap "pics/studio.png")  (above
                                      (text/font "Producer Hero" 60 "yellow"
                                                 #f 'modern 'italic 'bold #f)
                                      (text/font "Press [Space] to start or Press [h] to help." 35 "yellow"
                                                 #f 'modern 'italic 'bold #f))))
-
 ; scene initialization
 (big-bang 0
           (on-key handle-key)
