@@ -1,13 +1,17 @@
 #lang racket
-(require rsound)
+(require rsound
+         rsound/piano-tones)
 
-(define sound1 (rs-read "/home/mike/Desktop/FP/ShakeYourBootay.wav"))
-(define sound2 (rs-read "/home/mike/Desktop/FP/UpbeatFunk.wav"))
-
-;creates and RSound which plays three different sound at the same time
-(define sound3 (rs-overlay* (list sound1 sound2 (rs-read "/home/mike/Desktop/FP/808/clap (10).wav"))))
-
-
+(define q (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/clap1.wav"))
+(define a (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/clap2.wav"))
+(define z (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/kick1.wav"))
+(define w (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/kick2.wav"))
+(define s (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/hi-hat1.wav"))
+(define x (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/hi-hat2.wav"))
+(define e (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/snare1.wav"))
+(define d (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/cymbal1.wav"))
+(define c (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/cymbal2.wav"))
+ 
 ;play a continuous sound
 (define (play-nonstop sound)
   (define p (make-pstream)) ;creates a pstream
@@ -22,14 +26,30 @@
   (if(null? sound)
      "Error: Must play a valid RSound"
      (cond
-       ((eq? sound 'sound1) (play sound1))
-       ((eq? sound 'sound2) (play sound2))
-       ((eq? sound 'sound3) (play sound3)))))
+       ((eq? sound 'q) (play q))
+       ((eq? sound 'a) (play a))
+       ((eq? sound 'z) (play z))
+       ((eq? sound 'w) (play w))
+       ((eq? sound 's) (play s))
+       ((eq? sound 'x) (play x))
+       ((eq? sound 'e) (play e))
+       ((eq? sound 'd) (play d))
+       ((eq? sound 'c) (play c))
+       )))
 
 
-;plays sound1, records it, then plays the sound again 
-(define (sound4)
-  (play sound1)
-  (sleep .25)
-  (play (record-sound (rs-frames sound1))))
+;plays an rsound, records it, then replay the sound
+(define (play-and-record sound)
+  (play sound)
+  (sleep .125)
+  (play (record-sound (rs-frames sound))))
+
+
+
+
+
+;plays a list of arbitruary sounds using dotted tail notation
+(define (playlist . sound)
+  (play (rs-append* sound)))
+
 
