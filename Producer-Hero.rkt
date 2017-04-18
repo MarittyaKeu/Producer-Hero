@@ -2,7 +2,7 @@
 (require 2htdp/universe 2htdp/image rsound)
 (require "sound.rkt")
 ; reads the musics
-(define a (rs-read "/home/emmanuel/Desktop/Final-P/FP/sounds/Beethoven_5th_Symphony.wav"))
+(define intro-sound (rs-read "/home/emmanuel/Desktop/Final-P/FP/sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
 
 ;add to the list
@@ -23,26 +23,27 @@
 (define (list->string lst)
   (string-join (map ~a lst) ""))
 
-; handle input
+; handle input and adds text to add->list to display onto screen 
+;also add rsound objects into add-list1 to be used as arguements in other functions
 (define (handle-rsound n key)
   (cond   
     ; stop 
     ;[(key=? key "s") (add->list "s")]
     ; play the song
-    [(key=? key "q") (add->list "q")]
-    [(key=? key "a") (add->list "a")]
-    [(key=? key "z") (add->list "z")]
-    [(key=? key "w") (add->list "w")]
-    [(key=? key "s") (add->list "s")]
-    [(key=? key "x") (add->list "x")]
-    [(key=? key "e") (add->list "e")]
-    [(key=? key "d") (add->list "d")]
-    [(key=? key "c") (add->list "c")]
+    [(key=? key "q") (add->list "q")(add->list1 q)]
+    [(key=? key "a") (add->list "a")(add->list1 a)]
+    [(key=? key "z") (add->list "z")(add->list1 z)]
+    [(key=? key "w") (add->list "w")(add->list1 w)]
+    [(key=? key "s") (add->list "s")(add->list1 s)]
+    [(key=? key "x") (add->list "x")(add->list1 x)]
+    [(key=? key "e") (add->list "e")(add->list1 e)]
+    [(key=? key "d") (add->list "d")(add->list1 d)]
+    [(key=? key "c") (add->list "c")(add->list1 c)]
     [else n]
     )
 )
 
-; handle input
+; handle input 
 (define (handle-rsound2 n key)
   (cond   
     ; stop 
@@ -57,6 +58,7 @@
     [(key=? key "e") (play-sound "e")]
     [(key=? key "d") (play-sound "d")]
     [(key=? key "c") (play-sound "c")]
+    [(key=? key "r") (play-and-record (add->list1 ding))]
     [else n]
     )
 )
@@ -127,7 +129,7 @@
 
 ; set main scene
 (define (render y)
-  (pstream-play as a)
+  (pstream-play as intro-sound)
   (underlay  (bitmap "pics/studio.png")  (above
                                           ;(text (number->string (add1 y)) 36 "silver")
                                           (text/font "Producer Hero" 60 "yellow"
