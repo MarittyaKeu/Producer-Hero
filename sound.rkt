@@ -2,7 +2,7 @@
 (require rsound)
 
 (provide play-nonstop)
-(provide play-spund)
+(provide play-sound)
 (provide playlist)
 (provide play-and-record)
 
