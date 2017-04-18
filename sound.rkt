@@ -15,16 +15,6 @@
 (define e (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/snare1.wav"))
 (define d (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/cymbal1.wav"))
 (define c (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/cymbal2.wav"))
- 
-;play a continuous sound
-(define (play-nonstop sound)
-  (define p (make-pstream)) ;creates a pstream
-  (define len (rs-frames sound))
-  (let loop ([t 0])
-    (pstream-queue p sound (+ t 44100))
-    (define next-t (+ t len))
-    (sleep (* 1/44100 (- next-t (pstream-current-frame p))))
-    (loop next-t)))
 
 (define (play-sound sound)
   (if(null? sound)
@@ -49,6 +39,6 @@
   (play (record-sound (rs-frames (rs-append* sound)))))
 
 
-;plays a list of arbitruary sounds using dotted tail notation
+;plays a list of arbitruary sounds 
 (define (playlist sound)
   (play (rs-append* sound)))
