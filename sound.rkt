@@ -1,6 +1,10 @@
 #lang racket
-(require rsound
-         rsound/piano-tones)
+(require rsound)
+
+(provide play-nonstop)
+(provide play-spund)
+(provide playlist)
+(provide play-and-record)
 
 (define q (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/clap1.wav"))
 (define a (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/clap2.wav"))
