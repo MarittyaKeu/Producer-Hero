@@ -1,10 +1,10 @@
 #lang racket
 (require rsound)
-
-(provide play-nonstop)
 (provide play-sound)
-(provide playlist)
+(provide play-nonstop)
 (provide play-and-record)
+(provide playlist)
+(provide q a z w s x e d c)
 
 (define q (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/clap1.wav"))
 (define a (rs-read "/home/mike/Desktop/Producer-Hero-master/newsound/clap2.wav"))
@@ -44,16 +44,11 @@
 
 ;plays an rsound, records it, then replay the sound
 (define (play-and-record sound)
-  (play sound)
+  (play (rs-append* sound))
   (sleep .125)
-  (play (record-sound (rs-frames sound))))
-
-
-
+  (play (record-sound (rs-frames (rs-append* sound)))))
 
 
 ;plays a list of arbitruary sounds using dotted tail notation
-(define (playlist . sound)
+(define (playlist sound)
   (play (rs-append* sound)))
-
-
