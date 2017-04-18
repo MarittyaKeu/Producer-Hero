@@ -11,7 +11,14 @@
       (lambda (new->item)
          (set! lst (append lst (list new->item)))
          lst)))
-
+         
+;add to the list
+(define add->list1
+   (let ((lst '()))
+      (lambda (new->item)
+         (set! lst (append lst (list new->item)))
+         lst)))
+         
 ;list to string conversion
 (define (list->string lst)
   (string-join (map ~a lst) ""))
@@ -72,7 +79,7 @@
 ; set sounds scene
 (define (render2 y)
   (underlay background1  (overlay/align "center" "center"
-                                        (text (list->string (add->list "")) 30 "yellow")
+                                        (text (list->string (remove-duplicates (add->list ""))) 30 "yellow")
                                         (swoosh (circle 300 "solid" "black") 90)
                                         ))) 
 
