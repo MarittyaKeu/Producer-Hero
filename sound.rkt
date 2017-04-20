@@ -36,6 +36,10 @@
   (play (rs-append* sound))
   (sleep .125)
   (play (record-sound (rs-frames (rs-append* sound)))))
+  
+;plays a list of arbitruary sounds using dotted tail notation
+(define (playlist sound)
+  (play (rs-append* sound)))
 
 ;plays a list of sounds from a list in reverse
 (define (reverse-playlist sound)
