@@ -37,7 +37,6 @@
   (sleep .125)
   (play (record-sound (rs-frames (rs-append* sound)))))
 
-
-;plays a list of arbitruary sounds 
-(define (playlist sound)
-  (play (rs-append* sound)))
+;plays a list of sounds from a list in reverse
+(define (reverse-playlist sound)
+  (playlist (foldr (lambda (x y) (append y (list x))) '() sound)))
