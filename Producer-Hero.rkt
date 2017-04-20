@@ -96,17 +96,13 @@
                                         (to-draw render2)))
       (error "error")))
 
-;(define (stop? world)
-;  (= world 400))
 
 ; text
 (define game-text (text/font "Press [Space] to start!" 35 "white"
                              #f 'modern 'italic 'bold #f))
-; handle input
-(define (handle-key n key)
+; help handle
+(define (handle-key2 n key)
   (cond
-    ; open intro window
-    [(key=? key "h") (intro 'true)]
     ; open game window2
     [(key=? key " ") (game 'true)]
     [else n]
@@ -122,7 +118,7 @@
   (if (eqv? n 'true)
       ; scene initialization
       (big-bang 0
-                (on-key handle-key)
+                (on-key handle-key2)
                 (name "Help")
                 (to-draw render1))
       (error "error")))
@@ -134,16 +130,18 @@
                                           ;(text (number->string (add1 y)) 36 "silver")
                                           (text/font "Producer Hero" 60 "yellow"
                                                 #f 'modern 'italic 'bold #f)
-                                          (text/font "Press [Space] to start or Press [h] to help." 35 "yellow"
+                                          (text/font "Press [h] to help." 35 "yellow"
                                               #f 'modern 'italic 'bold #f))))
-;(define (my-tick n) (add1 n))
-;(define (stop1? key)
-;  (= key 100))
+; main scene handle                                             
+(define (handle-key n key)
+  (cond
+    ; open intro window
+    [(key=? key "h") (intro 'true)]
+    [else n]
+    )
+)
 ; scene initialization
 (big-bang 0
-          ;(on-tick my-tick 1)
           (on-key handle-key)
-          ;(stop-when stop1?)
-          ;(close-on-stop #t)
-          (name "Main") ; title
+          (name "Main")
           (to-draw render))
