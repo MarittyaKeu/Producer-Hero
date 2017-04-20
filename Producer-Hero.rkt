@@ -2,7 +2,7 @@
 (require 2htdp/universe 2htdp/image rsound)
 (require "sound.rkt")
 ; reads the musics
-(define intro-sound (rs-read "/home/emmanuel/Desktop/Final-P/FP/sounds/Beethoven_5th_Symphony.wav"))
+(define intro-sound (rs-read "Sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
 
 ;add to the list
@@ -112,7 +112,7 @@
 ; set intro window
 (define (render1 y)
   (stop)
-  (underlay/xy (bitmap "pics/helpmenu.png") 20 100 game-text))
+  (underlay/xy (bitmap "Pics/helpmenu.png") 20 100 game-text))
 
 (define (intro n)
   (if (eqv? n 'true)
@@ -126,7 +126,7 @@
 ; set main scene
 (define (render y)
   (pstream-play as intro-sound)
-  (underlay  (bitmap "pics/studio.png")  (above
+  (underlay  (bitmap "Pics/studio.png")  (above
                                           ;(text (number->string (add1 y)) 36 "silver")
                                           (text/font "Producer Hero" 60 "yellow"
                                                 #f 'modern 'italic 'bold #f)
