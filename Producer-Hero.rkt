@@ -10,18 +10,15 @@
    (let ((lst '()))
       (lambda (new->item)
          (set! lst (append lst (list new->item)))
-         lst)))
+         lst)))q
          
 ;add to the list
 (define add->list1
    (let ((lst '()))
       (lambda (new->item)
          (set! lst (append lst (list new->item)))
-         lst)))
-         
-;list to string conversion
-(define (list->string lst)
-  (string-join (map ~a lst) ""))
+         lst)))        
+
 (define playing #f)
 ; handle input and adds text to add->list to display onto screen 
 ;also add rsound objects into add-list1 to be used as arguements in other functions
@@ -60,16 +57,15 @@
 ; set sounds scene
 (define (render2 y)
   (underlay background1  (overlay/align "center" "center"
-                                        (text (list->string (remove-duplicates (add->list ""))) 30 "yellow")
+                                        (text (string-join(map ~a (remove-duplicates (add->list ""))) "") 30 "yellow")
                                         (swoosh (circle 300 "solid" "black") 90)
-                                        ))) 
-
+                                        )))
+                                         
 (define (game n)
   (if (eqv? n 'true)
       ; scene initialization
       (begin (set! playing #t)(big-bang 0
                                         (on-key handle-rsound)
-                                        (on-release handle-rsound)
                                         (name "Hero")
                                         (to-draw render2)))
       (error "error")))
