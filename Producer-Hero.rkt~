@@ -22,22 +22,43 @@
 ;list to string conversion
 (define (list->string lst)
   (string-join (map ~a lst) ""))
-(define playing #f)
+
 ; handle input and adds text to add->list to display onto screen 
 ;also add rsound objects into add-list1 to be used as arguements in other functions
 (define (handle-rsound n key)
   (cond   
+    ; stop 
+    ;[(key=? key "s") (add->list "s")]
     ; play the song
-    [(key=? key "q") (add->list "q")(add->list1 q)(play-sound "q")]
-    [(key=? key "a") (add->list "a")(add->list1 a)(play-sound "a")]
-    [(key=? key "z") (add->list "z")(add->list1 z)(play-sound "z")]
-    [(key=? key "w") (add->list "w")(add->list1 w)(play-sound "w")]
-    [(key=? key "s") (add->list "s")(add->list1 s)(play-sound "s")]
-    [(key=? key "x") (add->list "x")(add->list1 x)(play-sound "x")]
-    [(key=? key "e") (add->list "e")(add->list1 e)(play-sound "e")]
-    [(key=? key "d") (add->list "d")(add->list1 d)(play-sound "d")]
-    [(key=? key "c") (add->list "c")(add->list1 c)(play-sound "c")]
-    [(key=? key "r") (add->list "play and record")(play-and-record (add->list1 ding))]
+    [(key=? key "q") (add->list "q")(add->list1 q)]
+    [(key=? key "a") (add->list "a")(add->list1 a)]
+    [(key=? key "z") (add->list "z")(add->list1 z)]
+    [(key=? key "w") (add->list "w")(add->list1 w)]
+    [(key=? key "s") (add->list "s")(add->list1 s)]
+    [(key=? key "x") (add->list "x")(add->list1 x)]
+    [(key=? key "e") (add->list "e")(add->list1 e)]
+    [(key=? key "d") (add->list "d")(add->list1 d)]
+    [(key=? key "c") (add->list "c")(add->list1 c)]
+    [else n]
+    )
+)
+
+; handle input 
+(define (handle-rsound2 n key)
+  (cond   
+    ; stop 
+    [(key=? key " ") (stop)]
+    ; play the song
+    [(key=? key "q") (play-sound "q")]
+    [(key=? key "a") (play-sound "a")]
+    [(key=? key "z") (play-sound "z")]
+    [(key=? key "w") (play-sound "w")]
+    [(key=? key "s") (play-sound "s")]
+    [(key=? key "x") (play-sound "x")]
+    [(key=? key "e") (play-sound "e")]
+    [(key=? key "d") (play-sound "d")]
+    [(key=? key "c") (play-sound "c")]
+    [(key=? key "r") (play-and-record (add->list1 ding))]
     [else n]
     )
 )
@@ -64,11 +85,12 @@
                                         (swoosh (circle 300 "solid" "black") 90)
                                         ))) 
 
+(define playing #f)
 (define (game n)
   (if (eqv? n 'true)
       ; scene initialization
       (begin (set! playing #t)(big-bang 0
-                                        (on-key handle-rsound)
+                                        (on-key handle-rsound2)
                                         (on-release handle-rsound)
                                         (name "Hero")
                                         (to-draw render2)))
