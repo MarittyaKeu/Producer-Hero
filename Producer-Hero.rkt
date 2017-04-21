@@ -1,6 +1,7 @@
 #lang racket
 (require 2htdp/universe 2htdp/image rsound)
 (require "sound.rkt")
+
 ; reads the musics
 (define intro-sound (rs-read "Sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
@@ -13,7 +14,7 @@
          lst)))      
 
 ; handle input and adds text to add->list to display onto screen 
-;also add rsound objects into add-list1 to be used as arguements in other functions
+; also add rsound objects into add-list1 to be used as arguements in other functions
 (define (handle-rsound n key)
   (cond   
     ; play the song
@@ -26,7 +27,13 @@
     [(key=? key "e") (addstring-sound "e")(addstring-sound e)(play-sound "e")]
     [(key=? key "d") (addstring-sound "d")(addstring-sound d)(play-sound "d")]
     [(key=? key "c") (addstring-sound "c")(addstring-sound c)(play-sound "c")]
-    [(key=? key "r") (addstring-sound "play and record")(play-and-record (filter rsound? (addstring-sound ding)))]
+    [(key=? key "f") (addstring-sound "f")(addstring-sound f)(play-sound "f")]
+    [(key=? key "t") (addstring-sound "t")(addstring-sound t)(play-sound "t")]
+    [(key=? key "v") (addstring-sound "v")(addstring-sound v)(play-sound "v")]
+    [(key=? key "r") (addstring-sound "r")(addstring-sound r)(play-sound "r")]
+    [(key=? key "p") (addstring-sound "play and record")(play-and-record (filter rsound? (addstring-sound ding)))]
+    [(key=? key "o") (addstring-sound "reverse playlist")(reverse-playlist (filter rsound? (addstring-sound ding)))]
+    [(key=? key "l") (addstring-sound "playlist")(playlist (filter rsound? (addstring-sound ding)))]
     [else n]
     )
 )
@@ -42,24 +49,23 @@
           [(zero? s) image]
           [else (swoosh
                  (overlay/align "center" "top"
-                                 (square (* s 1/2) "solid" (color (random 256) (random 256) (random 256)))
+                                (square (* s 1/2) "solid" (color (random 256) (random 256) (random 256)))
                                 (rotate 8 image))
                  (- s 1))]))
 
 ; set sounds scene
 (define (render2 y)
   (underlay background1  (overlay/align "center" "center"
-                                        (text (string-join(map ~a (filter string? (remove-duplicates(addstring-sound " ")))) " ") 30 "yellow")
-                                        (swoosh (circle 300 "solid" "black") 90)
-                                        )))
+                                        (text (string-join (map ~a (filter string? (remove-duplicates (addstring-sound " ")))) " ") 30 "yellow")
+                                        (swoosh (circle 300 "solid" "black") 90))))
                                          
 (define (game n)
   (if (eqv? n 'true)
       ; scene initialization
-             (big-bang 0
-                       (on-key handle-rsound)
-                       (name "Producer Hero")
-                       (to-draw render2))
+      (big-bang 0
+                (on-key handle-rsound)
+                (name "Producer Hero")
+                (to-draw render2))
       (error "error")))
 
 ; text
@@ -92,7 +98,6 @@
 (define (render y)
   (pstream-play as intro-sound)
   (underlay  (bitmap "Pics/studio.png")  (above
-                                          ;(text (number->string (add1 y)) 36 "silver")
                                           (text/font "Producer Hero" 60 "yellow"
                                                 #f 'modern 'italic 'bold #f)
                                           (text/font "Press [h] to help." 35 "yellow"

@@ -5,9 +5,10 @@
 (provide play-sound)
 (provide play-and-record)
 (provide playlist)
-(provide q a z w s x e d c f v g)
+(provide reverse-playlist)
+(provide q a z w s x e d c f t v r)
 
-
+; sound keys
 (define q (rs-read "Sounds/clap1.wav"))
 (define a (rs-read "Sounds/clap2.wav"))
 (define z (rs-read "Sounds/kick1.wav"))
@@ -17,6 +18,7 @@
 (define e (rs-read "Sounds/snare1.wav"))
 (define d (rs-read "Sounds/cymbal1.wav"))
 (define c (rs-read "Sounds/cymbal2.wav"))
+
 ;piano keys
 (define f (piano-tone '30))
 (define v (piano-tone '40))
@@ -39,7 +41,7 @@
        ((eq? sound "f") (play f))
        ((eq? sound "v") (play v))
        ((eq? sound "t") (play t))
-       ((eq? sound "r") (play g))
+       ((eq? sound "r") (play r))
        )))
 
 
@@ -49,10 +51,10 @@
   (sleep .125)
   (play (record-sound (rs-frames (rs-append* sound)))) (sleep (/ 3 (length sound)))))
   
-
 ;plays a list of sounds from a list in reverse using foldr
 (define (reverse-playlist sound)
   (playlist (foldr (lambda (x y) (append y (list x))) '() sound)))
+
 
 (define stream (make-pstream))
 
