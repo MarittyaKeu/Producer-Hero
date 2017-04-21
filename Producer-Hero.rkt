@@ -5,15 +5,15 @@
 (define intro-sound (rs-read "Sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
 
-;add to the list
-(define add->list
+;add a string to the list
+(define addstring
    (let ((lst '()))
       (lambda (new->item)
          (set! lst (append lst (list new->item)))
-         lst)))q
+         lst)))
          
-;add to the list
-(define add->list1
+;add a sound to the list
+(define addsound
    (let ((lst '()))
       (lambda (new->item)
          (set! lst (append lst (list new->item)))
@@ -25,16 +25,16 @@
 (define (handle-rsound n key)
   (cond   
     ; play the song
-    [(key=? key "q") (add->list "q")(add->list1 q)(play-sound "q")]
-    [(key=? key "a") (add->list "a")(add->list1 a)(play-sound "a")]
-    [(key=? key "z") (add->list "z")(add->list1 z)(play-sound "z")]
-    [(key=? key "w") (add->list "w")(add->list1 w)(play-sound "w")]
-    [(key=? key "s") (add->list "s")(add->list1 s)(play-sound "s")]
-    [(key=? key "x") (add->list "x")(add->list1 x)(play-sound "x")]
-    [(key=? key "e") (add->list "e")(add->list1 e)(play-sound "e")]
-    [(key=? key "d") (add->list "d")(add->list1 d)(play-sound "d")]
-    [(key=? key "c") (add->list "c")(add->list1 c)(play-sound "c")]
-    [(key=? key "r") (add->list "play and record")(play-and-record (add->list1 ding))]
+    [(key=? key "q") (addstring "q")(addsound q)(play-sound "q")]
+    [(key=? key "a") (addstring "a")(addsound a)(play-sound "a")]
+    [(key=? key "z") (addstring "z")(addsound z)(play-sound "z")]
+    [(key=? key "w") (addstring "w")(addsound w)(play-sound "w")]
+    [(key=? key "s") (addstring "s")(addsound s)(play-sound "s")]
+    [(key=? key "x") (addstring "x")(addsound x)(play-sound "x")]
+    [(key=? key "e") (addstring "e")(addsound e)(play-sound "e")]
+    [(key=? key "d") (addstring "d")(addsound d)(play-sound "d")]
+    [(key=? key "c") (addstring "c")(addsound c)(play-sound "c")]
+    [(key=? key "r") (addstring " play and record")(play-and-record (addsound ding))]
     [else n]
     )
 )
@@ -57,7 +57,7 @@
 ; set sounds scene
 (define (render2 y)
   (underlay background1  (overlay/align "center" "center"
-                                        (text (string-join(map ~a (remove-duplicates (add->list ""))) "") 30 "yellow")
+                                        (text (string-join(map ~a (remove-duplicates (addstring " "))) " ") 30 "yellow")
                                         (swoosh (circle 300 "solid" "black") 90)
                                         )))
                                          
