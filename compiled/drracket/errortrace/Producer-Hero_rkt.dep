@@ -1,0 +1,1 @@
+("6.8" ("eb960a5249d46a0ed28a4c9e3137f7254a845e86" . "b47217784124977ae16b4eecb2f082331e588087") #"/home/emmanuel/Desktop/final/Producer-Hero/sound.rkt" (collects #"2htdp" #"image.rkt") (collects #"2htdp" #"universe.rkt") (collects #"errortrace" #"errortrace-key.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"rsound" #"main.rkt"))

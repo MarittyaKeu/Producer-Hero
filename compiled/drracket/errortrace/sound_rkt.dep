@@ -1,0 +1,1 @@
+("6.8" ("85b444521ba75e81c55fe69e0c7eb6e2af4670bb" . "472715148d0316f2cfc2a9e376520d9b8d96882c") (collects #"errortrace" #"errortrace-key.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"rsound" #"main.rkt"))
