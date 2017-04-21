@@ -5,7 +5,7 @@
 (provide play-sound)
 (provide play-and-record)
 (provide playlist)
-(provide q a z w s x e d c f v g)
+(provide q a z w s x e d c f v r)
 
 
 (define q (rs-read "Sounds/clap1.wav"))
@@ -39,7 +39,7 @@
        ((eq? sound "f") (play f))
        ((eq? sound "v") (play v))
        ((eq? sound "t") (play t))
-       ((eq? sound "r") (play g))
+       ((eq? sound "r") (play r)
        )))
 
 
