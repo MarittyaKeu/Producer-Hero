@@ -5,36 +5,28 @@
 (define intro-sound (rs-read "Sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
 
-;add a string to the list
-(define addstring
+;add a string and sound to the list
+(define addstring-sound
    (let ((lst '()))
       (lambda (new->item)
          (set! lst (append lst (list new->item)))
-         lst)))
-         
-;add a sound to the list
-(define addsound
-   (let ((lst '()))
-      (lambda (new->item)
-         (set! lst (append lst (list new->item)))
-         lst)))        
+         lst)))      
 
-(define playing #f)
 ; handle input and adds text to add->list to display onto screen 
 ;also add rsound objects into add-list1 to be used as arguements in other functions
 (define (handle-rsound n key)
   (cond   
     ; play the song
-    [(key=? key "q") (addstring "q")(addsound q)(play-sound "q")]
-    [(key=? key "a") (addstring "a")(addsound a)(play-sound "a")]
-    [(key=? key "z") (addstring "z")(addsound z)(play-sound "z")]
-    [(key=? key "w") (addstring "w")(addsound w)(play-sound "w")]
-    [(key=? key "s") (addstring "s")(addsound s)(play-sound "s")]
-    [(key=? key "x") (addstring "x")(addsound x)(play-sound "x")]
-    [(key=? key "e") (addstring "e")(addsound e)(play-sound "e")]
-    [(key=? key "d") (addstring "d")(addsound d)(play-sound "d")]
-    [(key=? key "c") (addstring "c")(addsound c)(play-sound "c")]
-    [(key=? key "r") (addstring " play and record")(play-and-record (addsound ding))]
+    [(key=? key "q") (addstring-sound "q")(addstring-sound q)(play-sound "q")]
+    [(key=? key "a") (addstring-sound "a")(addstring-sound a)(play-sound "a")]
+    [(key=? key "z") (addstring-sound "z")(addstring-sound z)(play-sound "z")]
+    [(key=? key "w") (addstring-sound "w")(addstring-sound w)(play-sound "w")]
+    [(key=? key "s") (addstring-sound "s")(addstring-sound s)(play-sound "s")]
+    [(key=? key "x") (addstring-sound "x")(addstring-sound x)(play-sound "x")]
+    [(key=? key "e") (addstring-sound "e")(addstring-sound e)(play-sound "e")]
+    [(key=? key "d") (addstring-sound "d")(addstring-sound d)(play-sound "d")]
+    [(key=? key "c") (addstring-sound "c")(addstring-sound c)(play-sound "c")]
+    [(key=? key "r") (addstring-sound "play and record")(play-and-record (filter rsound? (addstring-sound ding)))]
     [else n]
     )
 )
@@ -57,19 +49,18 @@
 ; set sounds scene
 (define (render2 y)
   (underlay background1  (overlay/align "center" "center"
-                                        (text (string-join(map ~a (remove-duplicates (addstring " "))) " ") 30 "yellow")
+                                        (text (string-join(map ~a (filter string? (remove-duplicates(addstring-sound " ")))) " ") 30 "yellow")
                                         (swoosh (circle 300 "solid" "black") 90)
                                         )))
                                          
 (define (game n)
   (if (eqv? n 'true)
       ; scene initialization
-      (begin (set! playing #t)(big-bang 0
-                                        (on-key handle-rsound)
-                                        (name "Hero")
-                                        (to-draw render2)))
+             (big-bang 0
+                       (on-key handle-rsound)
+                       (name "Producer Hero")
+                       (to-draw render2))
       (error "error")))
-
 
 ; text
 (define game-text (text/font "Press [Space] to start!" 35 "white"
