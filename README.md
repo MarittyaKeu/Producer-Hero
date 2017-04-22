@@ -1,9 +1,9 @@
-### Producer Hero
+# Producer Hero
 
-### Statement d
+### Statement done
 The concept of our project is to create a mixer that music producers often use. We have used the RSound, 2htdp/Universe, and 2htdp/image libraries to use in our project. For this project, we made an application that use the keyboard to generate an RSound and the end user can channel their inner producer to create a beat. The application allows the user to record the beat they've generated and play it back.
 
-### Analysis d
+### Analysis done
 At first we thought it would be hard to implement this program without using some of the things we had learned in class. We thought that because all of the three libraries we used have their own functions. However, we implement a list function that keeps append items to the end of the list. This function added strings and rsounds to the list. We filter string? and filter rsound? to takes the items that we need from the list. We apply map to the string-join function that takes a list. In addition, we use an image recursion function from the image.rkt, but we did a few changes and updates for the background.
 
 ### External Technologies
@@ -23,7 +23,7 @@ http://hiphopmakers.com/free-808-drum-kit-227-samples
 For our end result, we expect to have a full interactive mixer application. The application will come with instructions with what sound a certain letter on the keyboard will generate. The user should be able to use the keyboards to produce some sort of beats and have it recorded and played back.
 
 
-### Evaluation of Results d
+### Evaluation of Results done
 
 We have a successful run this program. An addition, we run a every individual functions, tested every keys and passed all the tests. 
 
@@ -40,7 +40,7 @@ We have a successful run this program. An addition, we run a every individual fu
 
 At the start of our application, we create a starting window using the 2htdp/universe library which is going to playing background introduction music. From there we are able to navigate to either a new help screen or the main program's screen. If you are at the help screen, you will be shown some tips on how to use our application, and also a keystroke that will bring you to the main program's screen. At the main program's screen, the magic happens. This is where you are able to start mixing sounds together to generate a nice beat and also record it into(hopefully) a file stored on computer.
 
-## Schedule d
+## Schedule done
 This is how are schedule looked like.........
 
 ### First Milestone (Sun Apr 9) 
@@ -57,5 +57,5 @@ We did some code optimized, added it some more wavs sounds, piano notes and adde
 ### Marittya "Mike" Keu  @MarittyaKeu
 I will be using RSound to incorporate into our project. I will create a bunch of RSound objects which we will then use and maniuplate to play sounds using keyboard.
 
-### Emmanuel Rosario @emmanrosa d
+### Emmanuel Rosario @emmanrosa done
 I used the 2hdtp/universe library to created scenes and saved all the user keystrokes in a list and play the sounds. Also, I filter the strings out of list, checked for duplicates and then converted the list to a string. Once I get the string, I can display then on the backgrounds using a text function from 2hdtp/image library.  
