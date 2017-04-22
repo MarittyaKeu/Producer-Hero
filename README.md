@@ -29,14 +29,14 @@ We have a successful run this program. An addition, we run a every individual fu
 
 ### Screenshot 
 
-+![main image](/architecture-diagram.png?raw=true "main image")
++![main image](/Pics/main.png?raw=true "main image")
 
-+![help image](/architecture-diagram.png?raw=true "help image")
++![help image](/Pics/help.png?raw=true "help image")
 
-+![hero image](/architecture-diagram.png?raw=true "hero image")
++![hero image](/Pics/producer.png?raw=true "hero image")
 
 ### Architecture Diagram
-+![test image](/architecture-diagram.png?raw=true "test image")
++![test image](/Pics/architecture-diagram.png?raw=true "test image")
 
 At the start of our application, we create a starting window using the 2htdp/universe library which is going to playing background introduction music. From there we are able to navigate to either a new help screen or the main program's screen. If you are at the help screen, you will be shown some tips on how to use our application, and also a keystroke that will bring you to the main program's screen. At the main program's screen, the magic happens. This is where you are able to start mixing sounds together to generate a nice beat and also record it into(hopefully) a file stored on computer.
 

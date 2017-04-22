@@ -6,12 +6,13 @@
 (define intro-sound (rs-read "Sounds/Beethoven_5th_Symphony.wav"))
 (define as (make-pstream))
 
+;define
+(define lst '())
 ;add a string and sound to the list
-(define addstring-sound
-   (let ((lst '()))
-      (lambda (new->item)
-         (set! lst (append lst (list new->item)))
-         lst)))      
+(define addstring-sound 
+  (lambda (new-item)
+    (begin (set! lst (append lst (list new-item))))
+    lst))    
 
 ; handle input and adds text to add->list to display onto screen 
 ; also add rsound objects into add-list1 to be used as arguements in other functions

@@ -2,14 +2,14 @@
 
  ### Emmanuel Rosario
 
- ### April 22, 2017
+ ### April 23, 2017
 
- ## Overview 
+ ### Overview 
  			coming soon
 
 Authorship note: All of the code described here was written by myself except recursion function.
 
-## Libraries Used
+### Libraries Used
 The code uses two libraries:
 ```racket
 (require 2hdtp/universe 2hdtp/image)
@@ -17,16 +17,18 @@ The code uses two libraries:
 1) 2htdp/universe - [Racke Universe.rkt](https://docs.racket-lang.org/teachpack/2htdpuniverse.html)
 2) 2htdp/image - [Racket Images.rkt](https://docs.racket-lang.org/teachpack/2htdpimage.html)
 
-## Key Code Excerpts
+### Key Code Excerpts
 All approaches from class 
 
-## Higher Order Procedures
+### Higher Order Procedures
 ```racket
-(define addstring-sound
-   (let ((lst '()))
-      (lambda (new->item)
-         (set! lst (append lst (list new->item)))
-         lst)))  
+;define
+(define lst '())
+;add a string and sound to the list
+(define addstring-sound 
+  (lambda (new-item)
+    (begin (set! lst (append lst (list new-item))))
+    lst))  
 ```
 I used the 2hdtp/universe library, I created a function that would be added to the big bag on on-key which is a built in function. The way this function works is like the user use the keyboard, lets say the "s", in the cond statement it hits the key=? key "s". I have set up to save the string and rsounds to this list and then play rsounds as well. 
 
@@ -35,7 +37,7 @@ I used the 2hdtp/universe library, I created a function that would be added to t
 ```
 I filter the strings out of list, checked for duplicates and then converted the list to a string. Once I get the string, I can display then on the backgrounds using a text function from 2hdtp/image library. 
 
-## Recursion
+### Recursion
 ```racket
 ; This code can be found at "https://docs.racket-lang.org/teachpack/2htdpimage-guide.html"
 ; this is a Recursive Image Functions
