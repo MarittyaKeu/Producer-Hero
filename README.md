@@ -25,7 +25,7 @@ For our end result, we expect to have a full interactive mixer application. The 
 
 ### Evaluation of Results done
 
-We have a successful run this program. An addition, we run a every individual functions, tested every keys and passed all the tests. 
+We have a successful running program. In addition, we ran every individual functions, tested every keys, and passed all the tests. 
 
 ### Screenshot 
 
@@ -47,10 +47,10 @@ This is how are schedule looked like.........
 For our first milestone, we have drawn our three sceens and had up and running properly using 2hdtp/universe and 2hdtp/image libraries.
 
 ### Second Milestone (Sun Apr 16) 
-For our second milestone, we got RSound working properly and also get the keys strokes to generate a sound.
+For our second milestone, we got RSound working properly and also got the keys strokes to generate a different RSounds.
 
 ### Public Presentation (Fri Apr 28, 2017) 
-We did some code optimized, added it some more wavs sounds, piano notes and added it some new functions. 
+We did some code optimizations, added it some more wavs sounds (piano notes) and rewrote some functions usinghigher order functions we learned in class such as foldr and filter. 
 
 ## Group Responsibilities
 
