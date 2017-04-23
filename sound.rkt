@@ -1,13 +1,15 @@
 #lang racket
 (require rsound
          rsound/piano-tones)
-(provide play-list)
+
+(provide playlist)
 (provide play-sound)
 (provide play-and-record)
 (provide reverse-playlist)
 (provide q a z w s x e d c f v r t)
 
 
+; sound keys
 (define q (rs-read "Sounds/clap1.wav"))
 (define a (rs-read "Sounds/clap2.wav"))
 (define z (rs-read "Sounds/kick1.wav"))
@@ -52,14 +54,10 @@
 
 ;plays a list of sounds from a list in reverse using foldr
 (define (reverse-playlist sound)
-  (play-list (foldr (lambda (x y) (append y (list x))) '() sound)))
-
-(define stream (make-pstream))
-
+  (playlist (foldr (lambda (x y) (append y (list x))) '() sound)))
+ 
 
 ;plays a stream of rsounds 
-(define (play-list sound)
-  ;(play (rs-append* sound)) (sleep .25))
+(define (playlist sound)
   (for ([i (length sound)])
-  (play stream (list-ref sound i)) (sleep (/ 3 (length sound )))))
-
+  (play (list-ref sound i)) (sleep .5)))

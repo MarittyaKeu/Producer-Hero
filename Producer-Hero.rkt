@@ -40,7 +40,7 @@
     [(key=? key "r") (addstring-sound "r")(addstring-sound r)(addstring-sound2 r)(play-sound "r")]
     [(key=? key "p") (addstring-sound "play and record")(play-and-record (filter rsound? (addstring-sound ding)))]
     [(key=? key "o") (addstring-sound "reverse playlist")(reverse-playlist (filter rsound? (addstring-sound ding)))]
-    [(key=? key "l") (addstring-sound "playlist")(playlist3 (filter rsound? (addstring-sound2 ding)))]
+    [(key=? key "l") (addstring-sound "playlist")(play-list (filter rsound? (addstring-sound2 ding)))]
     [else n]
     )
 )
