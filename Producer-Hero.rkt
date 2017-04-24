@@ -2,16 +2,17 @@
 (require 2htdp/universe 2htdp/image rsound)
 (require "sound.rkt")
 
-;
+;define an empty list
 (define lst '())
-;add a string and sound to the list
+
+;append items to list
 (define addstring-sound 
   (lambda (new-item)
     (begin (set! lst (append lst (list new-item))))
     lst))
 
-; handle input and adds text to add->list to display onto screen 
-; also add rsound objects into add-list1 to be used as arguements in other functions
+; handle input, adds strings and rsounds to addstring-sound list 
+; to be used as arguements in other functions.
 (define (handle-rsound n key)
   (cond   
     ; play the song
@@ -35,13 +36,9 @@
     )
 )
 
-
-; set the last scene background
-(define background1 (rectangle 1000 600 "solid" "black")) 
-
 ; 2.2.4 Recursive Image Functions
 ; This code can be found at "https://docs.racket-lang.org/teachpack/2htdpimage-guide.html"
-; this is a Recursive Image Functions
+; this is an update version of Recursive Image Functions
 (define (swoosh image s)
         (cond
           [(zero? s) image]
@@ -50,14 +47,17 @@
                                 (square (* s 1/2) "solid" (color (random 256) (random 256) (random 256)))
                                 (rotate 8 image))
                  (- s 1))]))
+                 
+; set the last scene background
+(define background1 (rectangle 1000 600 "solid" "black")) 
 
-; set sounds scene
+; set last scene
 (define (render2 y)
   (underlay background1  (overlay/align "center" "center"
                                         (text (string-join (map ~a (filter string? (remove-duplicates (addstring-sound " ")))) " ") 30 "yellow")
                                         (swoosh (circle 300 "solid" "black") 90))))
                                          
-(define (game n)
+(define (phero n)
   (if (eqv? n 'true)
       ; scene initialization
       (big-bang 0
@@ -66,22 +66,23 @@
                 (to-draw render2))
       (error "error")))
 
-; text
-(define game-text (text/font "Press [Space] to start!" 30 "white"
-                             #f 'modern 'italic 'bold #f))
 ; help handle
 (define (handle-key2 n key)
   (cond
-    ; open game window2
-    [(key=? key " ") (game 'true)]
+    ; open phero 
+    [(key=? key " ") (phero 'true)]
     [else n]
     )
 )
 
+; define text 
+(define help-text (text/font "Press [Space] to start!" 30 "white"
+                             #f 'modern 'italic 'bold #f))
 ; set intro window
 (define (render1 y)
   (stop)
-  (underlay/xy (bitmap "Pics/helpmenu.png") 20 140 game-text))
+  ; adding text to the help menu
+  (underlay/xy (bitmap "Pics/helpmenu.png") 20 140 help-text))
 
 (define (intro n)
   (if (eqv? n 'true)
