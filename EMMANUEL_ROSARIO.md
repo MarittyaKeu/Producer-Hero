@@ -5,7 +5,7 @@
  ### April 23, 2017
 
  ### Overview 
- 			coming soon
+The concept of our project is to create a mixer that music producers often use. We have used the RSound, 2htdp/Universe, and 2htdp/image libraries to use in our project. For this project, we made an application that use the keyboard to generate an RSound and the end user can channel their inner producer to create a beat. The application allows the user to record the beat they've generated and play it back.
 
 Authorship note: All of the code described here was written by myself except recursion function.
 
