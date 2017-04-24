@@ -10,7 +10,7 @@
 (provide stream)
 
 ;intro music
-(define intro-sound (rs-read "Sound/Beethoven_5th_Symphony.wav"))
+(define intro-sound (rs-read "Sounds/Beethoven_5th_Symphony.wav"))
 ; sound keys
 (define q (rs-read "Sounds/clap1.wav"))
 (define a (rs-read "Sounds/clap2.wav"))
