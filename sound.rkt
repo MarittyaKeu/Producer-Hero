@@ -6,9 +6,11 @@
 (provide play-sound)
 (provide play-and-record)
 (provide reverse-playlist)
-(provide q a z w s x e d c f v r t)
+(provide q a z w s x e d c f v r t intro-sound)
+(provide stream)
 
-
+;intro music
+(define intro-sound (rs-read "Sound/Beethoven_5th_Symphony.wav"))
 ; sound keys
 (define q (rs-read "Sounds/clap1.wav"))
 (define a (rs-read "Sounds/clap2.wav"))
@@ -43,7 +45,7 @@
        ((eq? sound "t") (play t))
        ((eq? sound "r") (play r))
        )))
-
+(define stream (make-stream))
 
 ;plays an rsound, records it, then replay the sound
 (define (play-and-record sound)
