@@ -67,7 +67,7 @@
       (error "error")))
 
 ; text
-(define game-text (text/font "Press [Space] to start!" 35 "white"
+(define game-text (text/font "Press [Space] to start!" 30 "white"
                              #f 'modern 'italic 'bold #f))
 ; help handle
 (define (handle-key2 n key)
@@ -81,7 +81,7 @@
 ; set intro window
 (define (render1 y)
   (stop)
-  (underlay/xy (bitmap "Pics/helpmenu.png") 20 100 game-text))
+  (underlay/xy (bitmap "Pics/helpmenu.png") 20 140 game-text))
 
 (define (intro n)
   (if (eqv? n 'true)
