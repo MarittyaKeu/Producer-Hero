@@ -45,7 +45,7 @@
        ((eq? sound "t") (play t))
        ((eq? sound "r") (play r))
        )))
-(define stream (make-stream))
+(define stream (make-pstream))
 
 ;plays an rsound, records it, then replay the sound
 (define (play-and-record sound)
