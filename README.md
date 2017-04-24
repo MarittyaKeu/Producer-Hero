@@ -13,10 +13,16 @@ At this point, we are not sure if we will use external technologies.
 
 RSound uses and manipulate wav files so we downloaded some sample sounds and an 808 drum kit to play around with. Some wav files we've played around with so far are from the following websites listed below......
 
-http://www.brainybetty.com/soundsforpowerpoint2.htm
-
 http://hiphopmakers.com/free-808-drum-kit-227-samples
 
+Beethoven's 5th Symphony 
+https://www.youtube.com/watch?v=_4IRMYuE1hI
+
+This website was used to convert the youtube file into an mp3 file.
+http://www.youtube-mp3.org/
+
+We used this website to convert our mp3 file to a wav file.
+http://audio.online-convert.com/convert-to-wav
 
 ### Deliverable and Demonstration
 For our end result, we expect to have a full interactive mixer application. The application will come with instructions with what sound a certain letter on the keyboard will generate. The user should be able to use the keyboards to produce some sort of beats and have it recorded and played back.
