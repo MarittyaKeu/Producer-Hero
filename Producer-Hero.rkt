@@ -2,10 +2,6 @@
 (require 2htdp/universe 2htdp/image rsound)
 (require "sound.rkt")
 
-; reads the musics
-(define intro-sound (rs-read "Sounds/Beethoven_5th_Symphony.wav"))
-(define as (make-pstream))
-
 ;define
 (define lst '())
 ;add a string and sound to the list
@@ -104,7 +100,7 @@
 
 ; set main scene
 (define (render y)
-  (pstream-play as intro-sound)
+  (pstream-play stream intro-sound)
   (underlay  (bitmap "Pics/studio.png")  (above
                                           (text/font "Producer Hero" 60 "yellow"
                                                 #f 'modern 'italic 'bold #f)
