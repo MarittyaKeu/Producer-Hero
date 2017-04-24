@@ -44,7 +44,7 @@ This screen is our help menu. It has a map key to show what sound each key strok
 The final screen is where the magic happens. We used a recursive circular image that was given as an example in the Racket documentation and added a neat feature that randomly changes images' color. This sort of give it a color feature that makes it seems as if the image is spinning. Also, when you type in the keys it is displayed within the circular image. However, we removed any duplicate keys that were pressed. 
 
 ### Architecture Diagram done
-+![test image](/Pics/architecture-diagram.png?raw=true "test image")
++![test image](/Pics/diagram.png?raw=true "test image")
 
 At the start of our application, we create a starting window using the 2htdp/universe library which is going to playing background introduction music. From there we are able to navigate to either a new help screen or the main program's screen. If you are at the help screen, you will be shown some tips on how to use our application, and also a keystroke that will bring you to the main program's screen. At the main program's screen, the magic happens. This is where you are able to start mixing sounds together to generate a nice beat and also record it into(hopefully) a file stored on computer.
 
