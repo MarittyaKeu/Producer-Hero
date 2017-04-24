@@ -2,7 +2,7 @@
 (require 2htdp/universe 2htdp/image rsound)
 (require "sound.rkt")
 
-;define
+;
 (define lst '())
 ;add a string and sound to the list
 (define addstring-sound 
@@ -10,33 +10,27 @@
     (begin (set! lst (append lst (list new-item))))
     lst))
 
-(define addstring-sound2 
-  (lambda (new-item)
-    (begin (set! lst (append lst (list new-item))))
-    lst))
- 
-
 ; handle input and adds text to add->list to display onto screen 
 ; also add rsound objects into add-list1 to be used as arguements in other functions
 (define (handle-rsound n key)
   (cond   
     ; play the song
-    [(key=? key "q") (addstring-sound "q")(addstring-sound q)(addstring-sound2 q)(play-sound "q")]
-    [(key=? key "a") (addstring-sound "a")(addstring-sound a)(addstring-sound2 a)(play-sound "a")]
-    [(key=? key "z") (addstring-sound "z")(addstring-sound z)(addstring-sound2 z)(play-sound "z")]
-    [(key=? key "w") (addstring-sound "w")(addstring-sound w)(addstring-sound2 w)(play-sound "w")]
-    [(key=? key "s") (addstring-sound "s")(addstring-sound s)(addstring-sound2 s)(play-sound "s")]
-    [(key=? key "x") (addstring-sound "x")(addstring-sound x)(addstring-sound2 x)(play-sound "x")]
-    [(key=? key "e") (addstring-sound "e")(addstring-sound e)(addstring-sound2 e)(play-sound "e")]
-    [(key=? key "d") (addstring-sound "d")(addstring-sound d)(addstring-sound2 d)(play-sound "d")]
-    [(key=? key "c") (addstring-sound "c")(addstring-sound c)(addstring-sound2 c)(play-sound "c")]
-    [(key=? key "f") (addstring-sound "f")(addstring-sound f)(addstring-sound2 f)(play-sound "f")]
-    [(key=? key "t") (addstring-sound "t")(addstring-sound t)(addstring-sound2 t)(play-sound "t")]
-    [(key=? key "v") (addstring-sound "v")(addstring-sound v)(addstring-sound2 v)(play-sound "v")]
-    [(key=? key "r") (addstring-sound "r")(addstring-sound r)(addstring-sound2 r)(play-sound "r")]
-    [(key=? key "p") (addstring-sound "play and record")(play-and-record (filter rsound? (addstring-sound ding)))]
-    [(key=? key "o") (addstring-sound "reverse playlist")(reverse-playlist (filter rsound? (addstring-sound ding)))]
-    [(key=? key "l") (addstring-sound "playlist")(playlist (filter rsound? (addstring-sound2 ding)))]
+    [(or (key=? key "q") (key=? key "Q")) (addstring-sound "q")(addstring-sound q)(play-sound "q")]
+    [(or (key=? key "a") (key=? key "A")) (addstring-sound "a")(addstring-sound a)(play-sound "a")]
+    [(or (key=? key "z") (key=? key "Z")) (addstring-sound "z")(addstring-sound z)(play-sound "z")]
+    [(or (key=? key "w") (key=? key "W")) (addstring-sound "w")(addstring-sound w)(play-sound "w")]
+    [(or (key=? key "s") (key=? key "S")) (addstring-sound "s")(addstring-sound s)(play-sound "s")]
+    [(or (key=? key "x") (key=? key "X")) (addstring-sound "x")(addstring-sound x)(play-sound "x")]
+    [(or (key=? key "e") (key=? key "E")) (addstring-sound "e")(addstring-sound e)(play-sound "e")]
+    [(or (key=? key "d") (key=? key "D")) (addstring-sound "d")(addstring-sound d)(play-sound "d")]
+    [(or (key=? key "c") (key=? key "C")) (addstring-sound "c")(addstring-sound c)(play-sound "c")]
+    [(or (key=? key "f") (key=? key "F")) (addstring-sound "f")(addstring-sound f)(play-sound "f")]
+    [(or (key=? key "t") (key=? key "T")) (addstring-sound "t")(addstring-sound t)(play-sound "t")]
+    [(or (key=? key "v") (key=? key "V")) (addstring-sound "v")(addstring-sound v)(play-sound "v")]
+    [(or (key=? key "r") (key=? key "R")) (addstring-sound "r")(addstring-sound r)(play-sound "r")]
+    [(or (key=? key "p") (key=? key "P")) (addstring-sound "play and record")(play-and-record (filter rsound? (addstring-sound ding)))]
+    [(or (key=? key "o") (key=? key "O")) (addstring-sound "reverse playlist")(reverse-playlist (filter rsound? (addstring-sound ding)))]
+    [(or (key=? key "l") (key=? key "L")) (addstring-sound "playlist")(playlist (filter rsound? (addstring-sound ding)))]
     [else n]
     )
 )
@@ -110,7 +104,7 @@
 (define (handle-key n key)
   (cond
     ; open intro window
-    [(key=? key "h") (intro 'true)]
+    [(or (key=? key "h")(key=? key "H")) (intro 'true)]
     [else n]
     )
 )
