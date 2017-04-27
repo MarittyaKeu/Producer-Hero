@@ -32,7 +32,6 @@
     [(or (key=? key "p") (key=? key "P")) (addstring-sound "play and record")(play-and-record (filter rsound? (addstring-sound ding)))]
     [(or (key=? key "o") (key=? key "O")) (addstring-sound "reverse playlist")(reverse-playlist (filter rsound? (addstring-sound ding)))]
     [(or (key=? key "l") (key=? key "L")) (addstring-sound "playlist")(playlist (filter rsound? (addstring-sound ding)))]
-    [(or (key=? key "m") (key=? key "M")) (addstring-sound "save-playlist")(save-sound (filter rsound? (addstring-sound ding)))]
     [else n]
     )
 )
