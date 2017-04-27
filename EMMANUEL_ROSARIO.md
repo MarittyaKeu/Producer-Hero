@@ -20,7 +20,7 @@ The code uses two libraries:
 ### Key Code Excerpts
 All approaches from class 
 
-### Higher Order Procedures
+### Data Abstraction
 ```racket
 ;define
 (define lst '())
@@ -30,12 +30,13 @@ All approaches from class
     (begin (set! lst (append lst (list new-item))))
     lst))  
 ```
-I used the 2hdtp/universe library, I created a function that would be added to the big bag on on-key which is a built in function. The way this function works is like the user use the keyboard, lets say the "s", in the cond statement it hits the key=? key "s". I have set up to save the string and rsounds to this list and then play rsounds as well. 
+I used the 2hdtp/universe library, I created a function that would be added to the big bag on on-key which is a built in function. The way this function works is like the user use the keyboard, lets say the "s", in the cond statement it hits the key=? key "s". I have set up the function to create a list of items to be extracted later and can be use to play rsounds as well displays strings. 
 
+### Higher Order Procedures
 ```racket
 (string-join (map ~a (filter string? (remove-duplicates (addstring-sound " ")))) " ")
 ```
-I filter the strings out of list, checked for duplicates and then converted the list to a string. Once I get the string, I can display then on the backgrounds using a text function from 2hdtp/image library. 
+I filter the strings out of list, checked for duplicates and then converted the list to a string. Once I get the string, I can display it on the background, using a text function from 2hdtp/image library. 
 
 ### Recursion
 ```racket
@@ -50,4 +51,5 @@ I filter the strings out of list, checked for duplicates and then converted the 
                                 (rotate 8 image))
                  (- s 1))]))
 ```
-I use an image recursion function from the image.rkt, but I did a few changes and updates for the background.
+I used an image recursion function from the image.rkt, but I did a few changes and updates for the background.
+I added a square image instead of the circle. Also, insead of using the given color, I used a random function to change the color of each square. 
