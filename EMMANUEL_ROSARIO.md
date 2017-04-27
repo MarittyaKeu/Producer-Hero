@@ -51,5 +51,5 @@ I filter the strings out of list, checked for duplicates and then converted the 
                                 (rotate 8 image))
                  (- s 1))]))
 ```
-I used an image recursion function from the image.rkt, but I did a few changes and updates for the background.
+I used an image recursion function from the [image.rkt](https://docs.racket-lang.org/teachpack/2htdpimage-guide.html#%28part._.Recursive_.Image_.Functions%29), but I did a few changes and updates for the background.
 I added a square image instead of the circle. Also, insead of using the given color, I used a random function to change the color of each square. 
