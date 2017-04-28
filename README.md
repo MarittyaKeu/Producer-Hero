@@ -44,7 +44,7 @@ This screen is our help menu. It has a map key to show what sound each key strok
 The final screen is where the magic happens. We used a recursive circular image that was given as an example in the Racket documentation and added a neat feature that randomly changes the images' color. This gives it a neat feature and gives the illusion that the image is spinning. Also, when you type in a key, it is displayed inside of the circular image. However, we removed any duplicate keys that were pressed. 
 
 ### Architecture Diagram done
-![test image](/Pics/diagram.png?raw=true "test image")
+![test image](https://github.com/oplS17projects/Producer-Hero/blob/master/Pics/diagram.png "test image")
 
 At the start of our application, we created a starting window using the 2htdp/universe library which is going to be playing background introduction music. From there we are able to navigate to a new help screen. You will be shown a key map to show what keys generate what sound. From there, we navigate to the main application screen. There is where the magic happens. This is where you are able to start mixing sounds together to generate a nice beat. You can also play back a list of the sound you've created thus far or play it in reverse.
 ## Schedule
