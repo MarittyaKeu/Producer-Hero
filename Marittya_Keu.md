@@ -6,7 +6,7 @@
 # Overview
 Our application, particularly my portion of the project was to use the RSound library and create procedures and global objects that can be used in our main source file. The main feature of my code is having one big list of RSound objects and symbols so that I can manipulate it.
 
-The "big list" was created by my partner Emmanuel Rosa who created a procedure to generate that list called addstring-sound. It allows you to add an item to a list and appends a new list of item into a new list. Now, I can do work to the list.
+The "big list" was created by my partner Emmanuel Rosario who created a procedure to generate that list called addstring-sound. It allows you to add an item to a list and appends a new list of item into a new list. Now, I can do work to the list.
 
 **Authorship note:** All of the code described here was written by myself (and some by my partner).
 
