@@ -26,7 +26,7 @@ Here is a discussion of the most essential procedures, including a description o
 UMass Lowell's COMP.3010 Organization of Programming languages course.
 
 ## 1. Object Oriented Approach
-I created a bunch of global RSound objects that can be accessed via message passing. This is done by using the ```rs-read``` function which takes two arguments. The first arguement is the objects' name, and the second argument accepts a path file name. Here are some examples...
+I created a procedure that takes as a parameter an RSound object that can be accessed via message passing. This is done by using the ```rs-read``` function which takes two arguments. The first arguement is the objects' name, and the second argument accepts a path file name. Here are some examples...
 
 ```
 (define (play-sound sound)
